@@ -27,8 +27,12 @@ export const utils = {
       canvas.height = parent.clientHeight * scaleFactor;
     };
     expandFullScreen();
+    if (typeof window !== "undefined") {
+      // Resize screen when the browser has triggered the resize event
+      window.addEventListener('resize', expandFullScreen);
+    }
     // Resize screen when the browser has triggered the resize event
-    window.addEventListener('resize', expandFullScreen);
+    // window.addEventListener('resize', expandFullScreen);
   },
 
   // Given a WebGL context and an id for a shader script,
