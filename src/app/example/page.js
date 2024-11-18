@@ -19,6 +19,9 @@ export default function Example() {
   }, [])
 
   function configure() {
+    if (typeof window === "undefined") {
+      return
+    }
     // Configure `canvas`
     const canvas = utils.getCanvas("webgl-canvas");
     utils.autoResizeCanvas(canvas);
@@ -41,6 +44,9 @@ export default function Example() {
   }
 
   function initBuffers() {
+    if (typeof window === "undefined") {
+      return
+    }
     /*
       V0                    V3
       (-0.5, 0.5, 0)        (0.5, 0.5, 0)
@@ -85,6 +91,9 @@ export default function Example() {
   }
 
   function draw() {
+    if (typeof window === "undefined") {
+      return
+    }
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
