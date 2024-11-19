@@ -3,12 +3,12 @@
 import dynamic from "next/dynamic";
 
 // ダイナミックインポート
-const DynamicExample = dynamic(() => import("./ExampleClient"), { ssr: false });
+const DynamicPage = dynamic(() => import("./ExampleClient"), { ssr: false });
 
 export default function Page() {
   return (
     <div className="flex h-full">
-      <DynamicExample />
+      <DynamicPage />
     </div>
   );
 }
