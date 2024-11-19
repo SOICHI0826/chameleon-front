@@ -11,27 +11,27 @@ export class Clock extends EventEmitter {
     this.tick = this.tick.bind(this);
     this.tick();
 
-    if (typeof window !== "undefined") {
-      window.onblur = () => {
-        this.stop();
-        console.info('Clock stopped');
-      };
+    // if (typeof window !== "undefined") {
+    //   window.onblur = () => {
+    //     this.stop();
+    //     console.info('Clock stopped');
+    //   };
   
-      window.onfocus = () => {
-        this.start();
-        console.info('Clock resumed');
-      };
-    }
+    //   window.onfocus = () => {
+    //     this.start();
+    //     console.info('Clock resumed');
+    //   };
+    // }
 
-    // window.onblur = () => {
-    //   this.stop();
-    //   console.info('Clock stopped');
-    // };
+    window.onblur = () => {
+      this.stop();
+      console.info('Clock stopped');
+    };
 
-    // window.onfocus = () => {
-    //   this.start();
-    //   console.info('Clock resumed');
-    // };
+    window.onfocus = () => {
+      this.start();
+      console.info('Clock resumed');
+    };
   }
 
   // Gets called on every requestAnimationFrame cycle

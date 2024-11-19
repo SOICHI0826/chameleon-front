@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 
 // ダイナミックインポート
-const DynamicPage = dynamic(() => import("./client"), { ssr: false });
+const DynamicPage = dynamic(() => import("./clientComponent"), { ssr: false });
 
 export default function Page() {
   return (

@@ -26,12 +26,12 @@ export class Controls {
     canvas.onmousedown = event => this.onMouseDown(event);
     canvas.onmouseup = event => this.onMouseUp(event);
     canvas.onmousemove = event => this.onMouseMove(event);
-    if (typeof window !== "undefined") {
-      window.onkeydown = event => this.onKeyDown(event);
-      window.onkeyup = event => this.onKeyUp(event);
-    }
-    // window.onkeydown = event => this.onKeyDown(event);
-    // window.onkeyup = event => this.onKeyUp(event);
+    // if (typeof window !== "undefined") {
+    //   window.onkeydown = event => this.onKeyDown(event);
+    //   window.onkeyup = event => this.onKeyUp(event);
+    // }
+    window.onkeydown = event => this.onKeyDown(event);
+    window.onkeyup = event => this.onKeyUp(event);
   }
 
   // Sets picker for picking objects
@@ -51,12 +51,12 @@ export class Controls {
       canvas = canvas.offsetParent;
     }
 
-    if (typeof window !== "undefined") {
-      left += window.pageXOffset;
-      top -= window.pageYOffset;
-    }
-    // left += window.pageXOffset;
-    // top -= window.pageYOffset;
+    // if (typeof window !== "undefined") {
+    //   left += window.pageXOffset;
+    //   top -= window.pageYOffset;
+    // }
+    left += window.pageXOffset;
+    top -= window.pageYOffset;
 
     return {
       x: event.clientX - left,
